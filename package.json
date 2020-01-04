@@ -1,0 +1,23 @@
+{
+  "name": "testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "adder.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/willworth/testingjavascript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/willworth/testingjavascript/issues"
+  },
+  "homepage": "https://github.com/willworth/testingjavascript#readme",
+  "devDependencies": {
+    "mocha": "^6.2.2"
+  }
+}
