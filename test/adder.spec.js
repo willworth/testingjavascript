@@ -1,5 +1,5 @@
 const adder = require('../adder');
-const assert = require('assert')
+// const assert = require('assert')  // no longer needed once using jest.
 
 
 // const result = adder(1,3);
@@ -17,6 +17,23 @@ const assert = require('assert')
 
 // Now with mocha
 
+// describe ('The adder function', () =>{
+
+//     it('adds two numbers', ()=>{
+//         const actual = adder(1,3);
+//         const expected = 4;
+
+
+//         assert.equal(actual, expected)
+//     })
+
+
+
+// })
+
+
+// With jest we don't need the assert module:
+
 describe ('The adder function', () =>{
 
     it('adds two numbers', ()=>{
@@ -24,7 +41,7 @@ describe ('The adder function', () =>{
         const expected = 4;
 
 
-        assert.equal(actual, expected)
+        expect(actual).toBe(expected)
     })
 
 
