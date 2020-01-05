@@ -92,3 +92,47 @@ describe ('The adder function', () =>{
 ```
 
 As mentioned in the comment above, it's normal to have various "it" assertions for the various activities you wish to test.
+
+
+## Use deepStrictEqual with js {objects}
+
+The above example compares numbers, but for comparing javascript ***objects***  (imagine your function is returning an object, and that result is what you're testing) you need to use deepStrictEqual.  [Details in the docs](https://nodejs.org/api/assert.html#assert_assert_deepstrictequal_actual_expected_message).
+
+
+
+## Testing asynchonous functions
+
+You can use a callback (usually named done), or promises, or - if your dev environment allows it- async await.
+
+From the mocha [docs](https://mochajs.org/#using-async-await):
+
+```javascript
+beforeEach(async function() {
+  await db.clear();
+  await db.save([tobi, loki, jane]);
+});
+
+describe('#find()', function() {
+  it('responds with matching records', async function() {
+    const users = await db.find({type: 'User'});
+    users.should.have.length(3);
+  });
+});
+```
+
+
+## Code coverage
+
+```
+npm i nyc --save-dev
+```
+
+and add it to your test script in `package.json` and it'll run before your tests, giving you a nice breakdown of your coverage:
+
+
+ | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-|---------|----------|---------|---------|-------------------
+ |     100 |      100 |     100 |     100 |                   
+ |     100 |      100 |     100 |     100 |                   
+-|---------|----------|---------|---------|-------------------
+
