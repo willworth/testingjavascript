@@ -3,6 +3,6 @@ const adder = function(x,y){
 }
 
 
-console.log(adder(1,2))
+// console.log(adder(1,2))
 
 module.exports = adder;

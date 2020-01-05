@@ -2,8 +2,8 @@ const adder = require('../adder');
 const assert = require('assert')
 
 
-const result = adder(1,3);
-const expected = 4;
+// const result = adder(1,3);
+// const expected = 4;
 // if (result == 4) {
 //     console.log ('Test passes.')
 // } else {
@@ -11,5 +11,22 @@ const expected = 4;
 // }
 
 
+// This is the straight node assert version:
+// assert.equal(result, expected, "optional custom message")
 
-assert.equal(result, expected, "optional custom message")
+
+// Now with mocha
+
+describe ('The adder function', () =>{
+
+    it('adds two numbers', ()=>{
+        const actual = adder(1,3);
+        const expected = 4;
+
+
+        assert.equal(actual, expected)
+    })
+
+
+
+})

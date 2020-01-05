@@ -66,5 +66,29 @@ npm i mocha --save-dev
 Mocha is, according to [its site](https://mochajs.org/), *"a feature-rich JavaScript test framework running on Node.js and in the browser, making asynchronous testing simple and fun."*
 
 
-Mocha is configured via `package.json`.
+Mocha is configured via `package.json`.  You can see the repo for this tutorial [here](https://github.com/willworth/testingjavascript).
 
+
+Once you have Mocha set up, you'll have much better tools available.  Within your `myFunction.spec.js` you can describe what you want.  Here, I'm testing a simple adding function for demonstration purposes. 
+
+The function:
+```javascript
+const adder = function(x,y){
+    return x + y;
+}
+module.exports = adder;
+```
+And in the test file:
+```javascript
+// outer function "describe" is for the overall function being tested
+describe ('The adder function', () =>{
+// "It" refers to a specific behaviour being tested.  A function will probably have varions behavious you wish to test...
+    it('adds two numbers', ()=>{
+        const actual = adder(1,3);
+        const expected = 4;
+        assert.equal(actual, expected)
+    })
+})
+```
+
+As mentioned in the comment above, it's normal to have various "it" assertions for the various activities you wish to test.
