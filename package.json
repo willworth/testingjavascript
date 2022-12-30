@@ -19,7 +19,7 @@
   "homepage": "https://github.com/willworth/testingjavascript#readme",
   "devDependencies": {
     "jest": "^24.9.0",
-    "mocha": "^6.2.2",
+    "mocha": "^10.2.0",
     "nyc": "^15.0.0"
   }
 }
